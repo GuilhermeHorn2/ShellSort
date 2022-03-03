@@ -1,0 +1,48 @@
+
+#include <iostream>
+#include <cmath>
+#include <cstring>
+#include <cstdlib>
+//
+//using std::string
+//
+using namespace std;
+
+
+
+void shellSort(int arr[], int n)
+{
+	for(int gap=n/2;gap>0;gap /= 2)
+	{
+		for(int j = gap;j<n;j+=1)
+		{
+			int temp = arr[j];
+
+
+			for(int i=j;(i>=gap)&&(arr[i-gap]>temp);i-=gap)
+			{
+
+				swap(arr[i],arr[i-gap]);
+			}
+
+		}
+	}
+}
+
+
+
+int main(){
+    /*\n;||(or) e &&(and)*/
+    int n = 5;
+    int l[n] = {7,5,3,4,2};
+    shellSort(l,n);
+    for(int i = 0;i < n;i++){
+        printf("%d",l[i]);
+    }
+
+
+
+
+
+return 0;
+ }
